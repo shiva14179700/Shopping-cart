@@ -71,6 +71,9 @@ router.get("/addorder", authCheck, (req, res) => {
   }
 });
 
+//@route GET /orders
+//@description get orders
+//@access Private
 router.get("/", authCheck, (req, res) => {
   Order.find({ user: req.user })
     .populate("product", ["title", "desc", "category", "price", "img"])

@@ -16,7 +16,7 @@ const authCheck = (req, res, next) => {
 //@description get addresses
 //@access Private
 router.get("/", authCheck, (req, res) => {
-  Address.find()
+  Address.find({ user: req.user })
     .populate("user", ["name", "email"])
     .then(addresses => {
       if (addresses) {
