@@ -1,0 +1,75 @@
+body {
+  background: #222;
+}
+
+#fill5 {
+  background-image: url("https://rukminim1.flixcart.com/www/200/200/promos/31/10/2018/bff3bb3f-68a3-4f45-a00e-f13a7a9edb2e.png?q=90");
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+#fill2 {
+  background-image: url("https://rukminim1.flixcart.com/www/200/200/promos/31/10/2018/ca51b2c0-3bbc-4c12-850f-8c9ecad32674.png?q=90");
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+#fill3 {
+  background-image: url("https://rukminim1.flixcart.com/www/200/200/promos/31/10/2018/141e62ad-32a3-46ed-9a00-35980ab70582.png?q=90");
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+#fill4 {
+  background-image: url("https://rukminim1.flixcart.com/www/200/200/promos/31/10/2018/3ba4eacc-13e4-4342-81e0-f19b78e23358.png?q=90");
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+#fill1 {
+  background-image: url("https://rukminim1.flixcart.com/www/200/200/promos/31/10/2018/1898f510-af77-4686-9742-bc59e651506f.png?q=90");
+  position: relative;
+  height: 150px;
+  width: 150px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.empty {
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  border: 3px salmon solid;
+  background-color: white;
+}
+
+.hold {
+  border: solid #ccc 4px;
+}
+
+.hover {
+  background: #f4f4f4;
+  border-style: dashed;
+}
+
+.invisible {
+  display: none;
+}

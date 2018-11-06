@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/sidemenu.css">
+    <link rel="stylesheet" href="/public/css/product.css">
+    <title>Product</title>
+</head>
+
+<body>
+    <% include partials/nav.ejs %>
+    <main id="about">
+        <div class="twocol">
+            <div class="onecol">
+                <h1 class="lg-heading">
+                    <span class="text-secondary">
+                        <%= product.title %></span> -
+                    <span class="text-secondary">
+                        Rs.
+                        <%= product.price %></span>
+                </h1>
+                <div class="item">
+                    <a href="#!">
+                        <img src="/product/image/<%= product.img %>" alt="Project">
+                    </a>
+                    <a class="btn-light">
+                        <%= product.desc %>
+                    </a>
+                    <div class="buttons">
+                        <a href="/productcart/addProduct?id=<%= product.id %>" class="btn-light">
+                            Add to Cart
+                        </a>
+                        <a href="/address?id=<%= product.id %>&from=product" class="btn-light" id="buy-now">
+                            Buy Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="onecoll">
+                <h2 class="sm-heading">
+                    Check out some of the similar products...
+                </h2>
+                <% for(var i=0;i<products.length;i+=6) {%>
+                <div class="projects">
+                    <% if(i<products.length) { %>
+                    <div class="item">
+                        <a href="/product?_id=<%= products[i].id %>">
+                            <img src="/product/image/<%= products[i].img %>" alt="Project">
+                        </a>
+                        <a class="btn-dark">
+                            Rs.
+                            <%= products[i].price %>
+                        </a>
+                        <a href="/product?_id=<%= products[i].id %>" class="btn-light">
+                            <%= products[i].title %>
+                        </a>
+                    </div>
+                    <% }%>
+                    <% if(i+1<products.length) { %>
+                    <div class="item">
+                        <a href="/product?_id=<%= products[i+1].id %>">
+                            <img src="/product/image/<%= products[i+1].img %>" alt="Project">
+                        </a>
+                        <a class="btn-dark">
+                            Rs.
+                            <%= products[i+1].price %>
+                        </a>
+                        <a href="/product?_id=<%= products[i+1].id %>" class="btn-light">
+                            <%= products[i+1].title %>
+                        </a>
+                    </div>
+                    <% }%>
+                    <% if(i+2<products.length) { %>
+                    <div class="item">
+                        <a href="/product?_id=<%= products[i+2].id %>">
+                            <img src="/product/image/<%= products[i+2].img %>" alt="Project">
+                        </a>
+                        <a class="btn-dark">
+                            Rs.
+                            <%= products[i+2].price %>
+                        </a>
+                        <a href="/product?_id=<%= products[i+2].id %>" class="btn-light">
+                            <%= products[i+2].title %>
+                        </a>
+                    </div>
+                    <% }%>
+                    <% if(i+3<products.length) { %>
+                    <div class="item">
+                        <a href="/product?_id=<%= products[i+3].id %>">
+                            <img src="/product/image/<%= products[i+3].img %>" alt="Project">
+                        </a>
+                        <a class="btn-dark">
+                            Rs.
+                            <%= products[i+3].price %>
+                        </a>
+                        <a href="/product?_id=<%= products[i+3].id %>" class="btn-light">
+                            <%= products[i+3].title %>
+                        </a>
+                    </div>
+                    <% }%>
+                    <% if(i+4<products.length) { %>
+                    <div class="item">
+                        <a href="/product?_id=<%= products[i+4].id %>">
+                            <img src="/product/image/<%= products[i+4].img %>" alt="Project">
+                        </a>
+                        <a class="btn-dark">
+                            Rs.
+                            <%= products[i+4].price %>
+                        </a>
+                        <a href="/product?_id=<%= products[i+4].id %>" class="btn-light">
+                            <%= products[i+4].title %>
+                        </a>
+                    </div>
+                    <% }%>
+                    <% if(i+5<products.length) { %>
+                    <div class="item">
+                        <a href="/product?_id=<%= products[i+5].id %>">
+                            <img src="/product/image/<%= products[i+5].img %>" alt="Project">
+                        </a>
+
+                        <a class="btn-dark">
+                            Rs.
+                            <%= products[i+5].price %>
+                        </a>
+                        <a href="/product?_id=<%= products[i+5].id %>" class="btn-light">
+                            <%= products[i+5].title %>
+                        </a>
+                    </div>
+                    <% }%>
+                </div>
+                <% }%>
+            </div>
+        </div>
+
+    </main>
+    <% include partials/footer.ejs %>
+
+</body>
+
+</html>

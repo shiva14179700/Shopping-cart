@@ -1,0 +1,168 @@
+body {
+  background-color: #222;
+  font-family: "Pacifico", cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  margin-left: 1rem;
+}
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
+  font-size: 3rem;
+}
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(73, 73, 73, 0.5);
+  margin-left: 1rem;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: #eece1a;
+}
+
+.twocol {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas: "col1 col1 col1 col2";
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.onecol {
+  grid-area: col1;
+}
+
+.onecoll {
+  grid-area: col2;
+  margin: 20px;
+}
+
+.projects {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1rem;
+  grid-template-rows: repeat(3, 1fr);
+  border: 1px solid #000;
+}
+
+.item {
+  margin: 20px;
+}
+
+.item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  background: #fff;
+}
+.projects img {
+  width: 40%;
+  border: 3px #fff solid;
+}
+.projects img:hover {
+  opacity: 0.8;
+  transition: all 0.5s ease-out;
+}
+
+.buttons {
+  display: grid;
+  grid-gap: 0.3rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.btn,
+.btn-dark,
+.btn-light {
+  text-align: center;
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+}
+.btn:hover,
+.btn-dark:hover,
+.btn-light:hover {
+  background: #eece1a;
+  color: #000;
+}
+
+.btn-dark {
+  background: black;
+  color: #c4c4c4;
+}
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333;
+}
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .twocol {
+    grid-template-areas: "col1" "col2";
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  .projects {
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .twocol {
+    grid-gap: 0.7rem;
+    grid-template-areas: "col1" "col2";
+    grid-template-columns: repeat(1, 1fr);
+    margin-right: 20px;
+  }
+  .onecoll {
+    margin: 0px;
+  }
+  .item {
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    padding: 0rem;
+  }
+  .projects {
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .twocol {
+    grid-gap: 0.1rem;
+    grid-template-areas: "col1" "col2";
+    grid-template-columns: repeat(1, 1fr);
+    margin-right: 20px;
+  }
+}

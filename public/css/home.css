@@ -1,0 +1,48 @@
+.itemss {
+  margin-top: 50px;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
+  font-size: 6rem;
+}
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(73, 73, 73, 0.5);
+}
+
+.btn,
+.btn-dark,
+.btn-light {
+  text-align: center;
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 3rem;
+}
+.btn:hover,
+.btn-dark:hover,
+.btn-light:hover {
+  background: #eece1a;
+  color: #000;
+}
+
+.btn-dark {
+  background: black;
+  color: #c4c4c4;
+}
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333;
+}

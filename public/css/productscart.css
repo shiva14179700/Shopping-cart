@@ -1,0 +1,182 @@
+body {
+  background-color: #222;
+  font-family: "Pacifico", cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
+  font-size: 6rem;
+}
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
+  margin-bottom: 1rem;
+  padding: 0.2rem 1rem;
+  background: rgba(73, 73, 73, 0.5);
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: #eece1a;
+}
+
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-right: 40px;
+}
+
+.item {
+  margin-bottom: 40px;
+}
+
+.image {
+  grid-area: "image";
+}
+
+.descr {
+  grid-area: "desc";
+}
+
+.descr h2,
+h3,
+h4 {
+  margin: 10px;
+  color: #c4c4c4;
+}
+
+.bigbuttons {
+  display: grid;
+  grid-gap: 0.3rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.bigitem {
+  display: grid;
+  grid-gap: 0.2rem;
+  grid-template-areas: "image desc desc desc";
+}
+
+.buttons {
+  display: grid;
+  grid-gap: 0.3rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  background: #fff;
+}
+.projects img {
+  width: 40%;
+  border: 3px #fff solid;
+}
+.projects img:hover {
+  opacity: 0.8;
+  transition: all 0.5s ease-out;
+}
+
+.btn-light1 {
+  text-align: center;
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  background: #333;
+}
+
+.bigbuttons a {
+  color: #eece1a;
+  font-size: 1.3rem;
+}
+
+.bigbuttons a:hover {
+  color: #eece1a;
+  background: #fff;
+}
+
+.btn,
+.btn-dark,
+.btn-light {
+  text-align: center;
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+}
+.btn:hover,
+.btn-dark:hover,
+.btn-light:hover {
+  background: #eece1a;
+  color: #000;
+}
+
+.btn-dark {
+  background: black;
+  color: #c4c4c4;
+}
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .projects img {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .projects img {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .projects h2 {
+    font-size: 1.2rem;
+  }
+  .projects img {
+    width: 90%;
+  }
+  .buttons a {
+    font-size: 0.86rem;
+  }
+  .bigbuttons a {
+    font-size: 0.86rem;
+  }
+}

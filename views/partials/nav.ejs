@@ -1,0 +1,43 @@
+<nav class="navbar">
+    <span class="open-slide">
+        <a href="#" onclick="openSlideMenu()">
+            <svg width="30" height="30">
+                <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+                <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+                <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+            </svg>
+        </a>
+    </span>
+
+    <ul class="navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="/product/all">Products</a></li>
+        <li><a href="/productcart">Products-Cart</a></li>
+        <li><a href="/orders">Orders</a></li>
+        <% if (!req.user) {%>
+        <li class="right"><a href="/users/register">Register</a></li>
+        <li class="right"><a href="/users/login">Login</a></li>
+        <% }else{ %>
+        <li class="right"><a href="/users/logout">Logout</a></li>
+        <li class="right"><a href="">
+                <%= req.user.name %></a></li>
+        <% } %>
+    </ul>
+</nav>
+
+<div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <% if (!req.user) {%>
+    <a href="/users/register">Register</a>
+    <a href="/users/login">Login</a>
+    <% } %>
+    <a class="mobile-display" href="#">Home</a>
+    <a class="mobile-display" href="/product/all">Products</a>
+    <a class="mobile-display" href="/productcart">Products-Cart</a>
+    <a class="mobile-display" href="/orders">Orders</a>
+    <% if (req.user) {%>
+    <a href="/users/logout">Logout</a>
+    <% } %>
+</div>
+
+<div id="main">

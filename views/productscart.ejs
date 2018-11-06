@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/sidemenu.css">
+    <link rel="stylesheet" href="/public/css/productscart.css">
+    <title>ProductsCart</title>
+</head>
+
+<body>
+    <% include partials/nav.ejs %>
+    <main id="about">
+        <h2 class="sm-heading">
+            Here are the products you added to cart...
+        </h2>
+        <div class="bigbuttons">
+            <a class="btn-light1">
+                Total Price:
+                <%= products.cartValue %>
+            </a>
+            <a href="/address?id=&from=cart" class="btn-light1">
+                Place Order
+            </a>
+        </div>
+        <% for(var i=0;i<products.length;i+=2) {%>
+        <div class="projects">
+            <% if(i<products.length) { %>
+            <div class="item">
+                <div class="bigitem">
+                    <div class="image">
+                        <a href="/product?_id=<%= products[i].product.id %>">
+                            <img src="/product/image/<%= products[i].product.img %>" alt="Project">
+                        </a>
+                    </div>
+                    <div class="descr">
+                        <h2>
+                            <%= products[i].product.title %>
+                        </h2>
+                        <h3>
+                            <%= products[i].product.desc %>...
+                        </h3>
+                        <h4>
+                            <%= products[i].product.price %>
+                        </h4>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="/product/all" class="btn-light">
+                        Continue Shopping
+                    </a>
+                    <a href="/productcart/delete/<%= products[i].id %>" class="btn-light">
+                        Remove Item
+                    </a>
+                </div>
+            </div>
+            <% }%>
+            <% if(i+1<products.length) { %>
+            <div class="item">
+                <div class="bigitem">
+                    <div class="image">
+                        <a href="#!">
+                            <img src="/product/image/<%= products[i+1].product.img %>" alt="Project">
+                        </a>
+                    </div>
+                    <div class="descr">
+                        <h2>
+                            <%= products[i+1].product.title %>
+                        </h2>
+                        <h3>
+                            <%= products[i+1].product.desc %>...
+                        </h3>
+                        <h4>
+                            <%= products[i+1].product.price %>
+                        </h4>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <a href="/product/all" class="btn-light">
+                        Continue Shopping
+                    </a>
+                    <a href="/productcart/delete/<%= products[i+1].id %>" class="btn-light">
+                        Remove Item
+                    </a>
+                </div>
+            </div>
+            <% }%>
+        </div>
+        <% }%>
+    </main>
+    <% include partials/footer.ejs %>
+</body>
+
+</html>
