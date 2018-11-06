@@ -3,6 +3,7 @@ const router = require("express").Router();
 //address model
 const Address = require("../models/AddressModel");
 
+//Checking if the user is logged in or not
 const authCheck = (req, res, next) => {
   if (!req.user) {
     res.redirect("/users/login");
@@ -11,6 +12,9 @@ const authCheck = (req, res, next) => {
   }
 };
 
+//@route GET /address
+//@description get addresses
+//@access Private
 router.get("/", authCheck, (req, res) => {
   Address.find()
     .populate("user", ["name", "email"])

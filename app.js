@@ -45,7 +45,6 @@ app.use(passport.session());
 
 //Initialise routes
 app.use("/auth", GoogleOAuth);
-app.use("/profile", ProfileRoutes);
 app.use("/users", NormalLogin);
 app.use("/product", ProductRoutes);
 app.use("/productcart", ProductCartRoutes);

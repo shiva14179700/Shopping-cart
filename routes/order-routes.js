@@ -9,6 +9,7 @@ const Product = require("../models/ProductModel");
 //   res.send("orders");
 // });
 
+//Checking if the user is logged in or not
 const authCheck = (req, res, next) => {
   if (!req.user) {
     res.redirect("/users/login");
@@ -17,6 +18,9 @@ const authCheck = (req, res, next) => {
   }
 };
 
+//@route GET /orders/addorder
+//@description add order
+//@access Private
 router.get("/addorder", authCheck, (req, res) => {
   let errors = {};
   console.log(req.query.from);
@@ -78,6 +82,9 @@ router.get("/", authCheck, (req, res) => {
     });
 });
 
+//@route DELETE /orders/delete-order/:id
+//@description delete product from orders page
+//@access Private
 router.get("/delete-order/:id", authCheck, (req, res) => {
   Order.findById(req.params.id)
     .then(order => {
